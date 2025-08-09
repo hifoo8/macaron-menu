@@ -1,0 +1,563 @@
+
+<div class="image-placeholder">
+    <span>🍬</span>
+    <p>ضع صورة رئيسية للماكرون هنا</p>
+</div>
+
+<img src="images/main-macaron.jpg" alt="ماكرون فرنسي" style="width: 100%; border-radius: 15px;">
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>قائمة الماكرون الفرنسي</title>
+<style>
+    body {
+        font-family: 'Tahoma', sans-serif;
+        background: linear-gradient(135deg, #fff8f8 0%, #ffe4ec 100%);
+        color: #4a2c2a;
+        padding: 30px;
+        max-width: 700px;
+        margin: auto;
+        border-radius: 20px;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+        min-height: 100vh;
+    }
+    h1 {
+        text-align: center;
+        color: #e85a78;
+        font-size: 2.5em;
+        margin-bottom: 30px;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    }
+    h2 {
+        color: #c14462;
+        border-bottom: 3px solid #e85a78;
+        padding-bottom: 8px;
+        font-size: 1.4em;
+        margin-top: 30px;
+    }
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    ul li {
+        padding: 12px 15px;
+        font-size: 18px;
+        margin: 8px 0;
+        background: rgba(255, 255, 255, 0.7);
+        border-radius: 12px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        border-right: 4px solid transparent;
+    }
+    ul li:hover {
+        background: rgba(255, 255, 255, 0.9);
+        transform: translateX(-5px);
+        border-right: 4px solid #e85a78;
+        box-shadow: 0 4px 15px rgba(232, 90, 120, 0.2);
+    }
+    .section {
+        margin-bottom: 30px;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 15px;
+        backdrop-filter: blur(10px);
+    }
+    .price {
+        font-weight: bold;
+        color: #6d2d3c;
+        position: relative;
+    }
+    .price::after {
+        content: "💰";
+        margin-right: 10px;
+        font-size: 1.2em;
+    }
+    .contact {
+        background: linear-gradient(135deg, #ffe4ec 0%, #ffd1dc 100%);
+        padding: 25px;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 4px 20px rgba(232, 90, 120, 0.3);
+        margin-top: 30px;
+    }
+    .contact-button {
+        display: inline-block;
+        background: linear-gradient(135deg, #e85a78 0%, #c14462 100%);
+        color: white;
+        padding: 12px 25px;
+        border-radius: 25px;
+        text-decoration: none;
+        margin: 10px;
+        transition: all 0.3s ease;
+        font-weight: bold;
+        box-shadow: 0 4px 15px rgba(232, 90, 120, 0.4);
+    }
+    .contact-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(232, 90, 120, 0.6);
+        background: linear-gradient(135deg, #c14462 0%, #a03651 100%);
+    }
+    .flavor-selector {
+        margin-top: 20px;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 15px;
+    }
+    .hero-image {
+        text-align: center;
+        margin: 20px 0;
+    }
+    .image-placeholder {
+        background: linear-gradient(135deg, #ffe4ec 0%, #ffd1dc 100%);
+        border: 2px dashed #e85a78;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 200px;
+        color: #c14462;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+    .image-placeholder:hover {
+        background: linear-gradient(135deg, #ffd1dc 0%, #ffb6c1 100%);
+        transform: scale(1.02);
+    }
+    .image-placeholder span {
+        font-size: 3em;
+        margin-bottom: 10px;
+    }
+    .image-placeholder.small {
+        min-height: 60px;
+        width: 60px;
+        border-radius: 10px;
+        font-size: 1.5em;
+    }
+    .image-placeholder.small span {
+        font-size: 1.5em;
+        margin: 0;
+    }
+    .flavor-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+        margin: 8px 0;
+        background: white;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+    }
+    .flavor-content {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        flex: 1;
+    }
+    .flavor-image {
+        flex-shrink: 0;
+    }
+    .flavor-item:hover {
+        background: #ffe4ec;
+        transform: scale(1.02);
+    }
+    .quantity-control {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .quantity-btn {
+        background: #e85a78;
+        color: white;
+        border: none;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 16px;
+        transition: all 0.3s ease;
+    }
+    .quantity-btn:hover {
+        background: #c14462;
+        transform: scale(1.1);
+    }
+    .quantity-display {
+        min-width: 30px;
+        text-align: center;
+        font-weight: bold;
+        color: #6d2d3c;
+    }
+    .order-summary {
+        background: linear-gradient(135deg, #e85a78 0%, #c14462 100%);
+        color: white;
+        padding: 20px;
+        border-radius: 15px;
+        margin-top: 20px;
+        text-align: center;
+    }
+    .total-price {
+        font-size: 1.5em;
+        font-weight: bold;
+        margin: 10px 0;
+    }
+    .order-btn {
+        background: white;
+        color: #e85a78;
+        border: none;
+        padding: 15px 30px;
+        border-radius: 25px;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: 15px;
+    }
+    .order-btn:hover {
+        background: #ffe4ec;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+    }
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+        margin-top: 20px;
+    }
+    .gallery-item {
+        position: relative;
+    }
+    .gallery .image-placeholder {
+        min-height: 150px;
+        font-size: 0.9em;
+    }
+    .gallery .image-placeholder span {
+        font-size: 2em;
+    }
+    @media (max-width: 768px) {
+        body {
+            padding: 15px;
+            margin: 10px;
+        }
+        h1 {
+            font-size: 2em;
+        }
+        .section {
+            padding: 15px;
+        }
+        .gallery {
+            grid-template-columns: 1fr;
+        }
+        .flavor-content {
+            gap: 10px;
+        }
+        .image-placeholder.small {
+            min-height: 50px;
+            width: 50px;
+        }
+    }
+</style>
+</head>
+<body>
+    <h1>قائمة بيع الماكرون الفرنسي 🍬🇫🇷</h1>
+
+    <div class="section">
+        <h2>✨ نكهات الماكرون</h2>
+        
+        <!-- Hero Image Section -->
+        <div class="hero-image">
+            <div class="image-placeholder">
+                <span>🍬</span>
+                <p>ضع صورة رئيسية للماكرون هنا</p>
+            </div>
+        </div>
+        
+        <div class="flavor-selector">
+            <div class="flavor-item" data-flavor="vanilla">
+                <div class="flavor-content">
+                    <div class="flavor-image">
+                        <div class="image-placeholder small">🤍</div>
+                    </div>
+                    <span>فانيلا كريمية</span>
+                </div>
+                <div class="quantity-control">
+                    <button class="quantity-btn" onclick="changeQuantity('vanilla', -1)">-</button>
+                    <span class="quantity-display" id="vanilla-qty">0</span>
+                    <button class="quantity-btn" onclick="changeQuantity('vanilla', 1)">+</button>
+                </div>
+            </div>
+            <div class="flavor-item" data-flavor="chocolate">
+                <div class="flavor-content">
+                    <div class="flavor-image">
+                        <div class="image-placeholder small">🍫</div>
+                    </div>
+                    <span>شوكولاتة غنية</span>
+                </div>
+                <div class="quantity-control">
+                    <button class="quantity-btn" onclick="changeQuantity('chocolate', -1)">-</button>
+                    <span class="quantity-display" id="chocolate-qty">0</span>
+                    <button class="quantity-btn" onclick="changeQuantity('chocolate', 1)">+</button>
+                </div>
+            </div>
+            <div class="flavor-item" data-flavor="lemon">
+                <div class="flavor-content">
+                    <div class="flavor-image">
+                        <div class="image-placeholder small">🍋</div>
+                    </div>
+                    <span>ليمون منعش</span>
+                </div>
+                <div class="quantity-control">
+                    <button class="quantity-btn" onclick="changeQuantity('lemon', -1)">-</button>
+                    <span class="quantity-display" id="lemon-qty">0</span>
+                    <button class="quantity-btn" onclick="changeQuantity('lemon', 1)">+</button>
+                </div>
+            </div>
+            <div class="flavor-item" data-flavor="strawberry">
+                <div class="flavor-content">
+                    <div class="flavor-image">
+                        <div class="image-placeholder small">🍓</div>
+                    </div>
+                    <span>فراولة طبيعية</span>
+                </div>
+                <div class="quantity-control">
+                    <button class="quantity-btn" onclick="changeQuantity('strawberry', -1)">-</button>
+                    <span class="quantity-display" id="strawberry-qty">0</span>
+                    <button class="quantity-btn" onclick="changeQuantity('strawberry', 1)">+</button>
+                </div>
+            </div>
+            <div class="flavor-item" data-flavor="pistachio">
+                <div class="flavor-content">
+                    <div class="flavor-image">
+                        <div class="image-placeholder small">💚</div>
+                    </div>
+                    <span>فستق فاخر</span>
+                </div>
+                <div class="quantity-control">
+                    <button class="quantity-btn" onclick="changeQuantity('pistachio', -1)">-</button>
+                    <span class="quantity-display" id="pistachio-qty">0</span>
+                    <button class="quantity-btn" onclick="changeQuantity('pistachio', 1)">+</button>
+                </div>
+            </div>
+            <div class="flavor-item" data-flavor="coffee">
+                <div class="flavor-content">
+                    <div class="flavor-image">
+                        <div class="image-placeholder small">☕</div>
+                    </div>
+                    <span>قهوة اسبريسو</span>
+                </div>
+                <div class="quantity-control">
+                    <button class="quantity-btn" onclick="changeQuantity('coffee', -1)">-</button>
+                    <span class="quantity-display" id="coffee-qty">0</span>
+                    <button class="quantity-btn" onclick="changeQuantity('coffee', 1)">+</button>
+                </div>
+            </div>
+            <div class="flavor-item" data-flavor="blueberry">
+                <div class="flavor-content">
+                    <div class="flavor-image">
+                        <div class="image-placeholder small">🫐</div>
+                    </div>
+                    <span>توت أزرق</span>
+                </div>
+                <div class="quantity-control">
+                    <button class="quantity-btn" onclick="changeQuantity('blueberry', -1)">-</button>
+                    <span class="quantity-display" id="blueberry-qty">0</span>
+                    <button class="quantity-btn" onclick="changeQuantity('blueberry', 1)">+</button>
+                </div>
+            </div>
+            <div class="flavor-item" data-flavor="rose">
+                <div class="flavor-content">
+                    <div class="flavor-image">
+                        <div class="image-placeholder small">🌹</div>
+                    </div>
+                    <span>ورد دمشقي</span>
+                </div>
+                <div class="quantity-control">
+                    <button class="quantity-btn" onclick="changeQuantity('rose', -1)">-</button>
+                    <span class="quantity-display" id="rose-qty">0</span>
+                    <button class="quantity-btn" onclick="changeQuantity('rose', 1)">+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>📦 التعبئة</h2>
+        <ul>
+            <li class="price">علبة 6 قطع: 35 ريال</li>
+            <li class="price">علبة 12 قطعة: 65 ريال</li>
+            <li class="price">علبة 24 قطعة: 120 ريال</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>📍 ملاحظات الطلب</h2>
+        <ul>
+            <li>🚗 التوصيل متاح داخل المدينة برسوم إضافية</li>
+            <li>⏳ الحجز قبل 24 ساعة على الأقل</li>
+            <li>💖 إمكانية اختيار النكهات حسب الرغبة</li>
+        </ul>
+    </div>
+
+    <div class="order-summary" id="orderSummary" style="display: none;">
+        <h3>📋 ملخص الطلب</h3>
+        <div id="orderDetails"></div>
+        <div class="total-price" id="totalPrice">المجموع: 0 ريال</div>
+        <button class="order-btn" onclick="sendOrder()">إرسال الطلب عبر واتساب 📲</button>
+    </div>
+
+    <div class="section">
+        <h2>📸 معرض الصور</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <div class="image-placeholder">
+                    <span>📦</span>
+                    <p>صورة التعبئة والتغليف</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="image-placeholder">
+                    <span>🎁</span>
+                    <p>صورة الهدايا الخاصة</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="image-placeholder">
+                    <span>👨‍🍳</span>
+                    <p>صورة عملية التحضير</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact">
+        <p style="font-size: 1.2em; margin-bottom: 20px;">📲 للطلب والتواصل:</p>
+        <a href="https://wa.me/966000000000" class="contact-button" target="_blank">
+            واتساب: 0000000000 📱
+        </a>
+        <a href="https://instagram.com/YourInstagram" class="contact-button" target="_blank">
+            انستقرام: @YourInstagram 📸
+        </a>
+    </div>
+
+    <script>
+        let quantities = {
+            vanilla: 0,
+            chocolate: 0,
+            lemon: 0,
+            strawberry: 0,
+            pistachio: 0,
+            coffee: 0,
+            blueberry: 0,
+            rose: 0
+        };
+
+        const flavorNames = {
+            vanilla: 'فانيلا كريمية',
+            chocolate: 'شوكولاتة غنية',
+            lemon: 'ليمون منعش',
+            strawberry: 'فراولة طبيعية',
+            pistachio: 'فستق فاخر',
+            coffee: 'قهوة اسبريسو',
+            blueberry: 'توت أزرق',
+            rose: 'ورد دمشقي'
+        };
+
+        function changeQuantity(flavor, change) {
+            quantities[flavor] = Math.max(0, quantities[flavor] + change);
+            document.getElementById(flavor + '-qty').textContent = quantities[flavor];
+            updateOrderSummary();
+        }
+
+        function updateOrderSummary() {
+            const totalItems = Object.values(quantities).reduce((sum, qty) => sum + qty, 0);
+            const orderSummary = document.getElementById('orderSummary');
+            const orderDetails = document.getElementById('orderDetails');
+            const totalPrice = document.getElementById('totalPrice');
+
+            if (totalItems === 0) {
+                orderSummary.style.display = 'none';
+                return;
+            }
+
+            orderSummary.style.display = 'block';
+            
+            let detailsHTML = '';
+            let price = 0;
+
+            // Calculate price based on total quantity
+            if (totalItems <= 6) {
+                price = 35;
+            } else if (totalItems <= 12) {
+                price = 65;
+            } else if (totalItems <= 24) {
+                price = 120;
+            } else {
+                // For more than 24, calculate based on 24-piece boxes
+                const boxes = Math.ceil(totalItems / 24);
+                price = boxes * 120;
+            }
+
+            for (let flavor in quantities) {
+                if (quantities[flavor] > 0) {
+                    detailsHTML += `<div style="margin: 5px 0;">${flavorNames[flavor]}: ${quantities[flavor]} قطعة</div>`;
+                }
+            }
+
+            detailsHTML += `<div style="margin-top: 15px; font-weight: bold;">إجمالي القطع: ${totalItems}</div>`;
+            
+            orderDetails.innerHTML = detailsHTML;
+            totalPrice.textContent = `المجموع: ${price} ريال`;
+        }
+
+        function sendOrder() {
+            const totalItems = Object.values(quantities).reduce((sum, qty) => sum + qty, 0);
+            if (totalItems === 0) return;
+
+            let orderText = 'طلب ماكرون فرنسي:%0A%0A';
+            
+            for (let flavor in quantities) {
+                if (quantities[flavor] > 0) {
+                    orderText += `${flavorNames[flavor]}: ${quantities[flavor]} قطعة%0A`;
+                }
+            }
+
+            let price = 0;
+            if (totalItems <= 6) {
+                price = 35;
+                orderText += '%0Aالتعبئة: علبة 6 قطع%0A';
+            } else if (totalItems <= 12) {
+                price = 65;
+                orderText += '%0Aالتعبئة: علبة 12 قطعة%0A';
+            } else if (totalItems <= 24) {
+                price = 120;
+                orderText += '%0Aالتعبئة: علبة 24 قطعة%0A';
+            } else {
+                const boxes = Math.ceil(totalItems / 24);
+                price = boxes * 120;
+                orderText += `%0Aالتعبئة: ${boxes} علبة (24 قطعة لكل علبة)%0A`;
+            }
+
+            orderText += `%0Aإجمالي القطع: ${totalItems}%0A`;
+            orderText += `المجموع: ${price} ريال%0A%0A`;
+            orderText += 'شكراً لكم! 🍬';
+
+            const whatsappUrl = `https://wa.me/966000000000?text=${orderText}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // Add smooth scrolling animation on page load
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transform = 'translateY(20px)';
+            document.body.style.transition = 'all 0.8s ease';
+            
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+                document.body.style.transform = 'translateY(0)';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
