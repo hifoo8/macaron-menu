@@ -2,102 +2,111 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<title>قائمة الماكرون الفرنسي</title>
+<title>قائمة الماكرون الفرنسي - أسلوب فاخر</title>
 <style>
   /* ===== إعدادات الصفحة العامة ===== */
   body {
-    font-family: 'Tahoma', sans-serif; /* نوع الخط */
-    background: linear-gradient(135deg, #fff8f8 0%, #ffe4ec 100%); /* لون الخلفية المتدرج */
-    color: #4a2c2a; /* لون النصوص */
-    padding: 30px; /* المسافة الداخلية */
-    max-width: 700px; /* عرض المحتوى */
-    margin: auto; /* توسيط المحتوى */
-    border-radius: 20px; /* تدوير الحواف */
-    box-shadow: 0 8px 32px rgba(0,0,0,0.15); /* ظل */
-    min-height: 100vh; /* ملء الشاشة */
+    font-family: 'Cairo', sans-serif; /* خط أنيق */
+    background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%); /* خلفية داكنة فاخرة */
+    color: #f5f5f5; /* لون النص */
+    padding: 30px;
+    max-width: 800px;
+    margin: auto;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+    min-height: 100vh;
   }
 
   /* ===== العنوان الرئيسي ===== */
   h1 {
-    text-align: center; /* توسيط العنوان */
-    color: #e85a78; /* لون العنوان */
-    font-size: 2.5em; /* حجم الخط */
-    margin-bottom: 30px; /* المسافة أسفل */
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.1); /* ظل خفيف */
+    text-align: center;
+    color: #d4af37; /* ذهبي فاخر */
+    font-size: 3em;
+    margin-bottom: 30px;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.7);
   }
 
   /* ===== العناوين الفرعية ===== */
   h2 {
-    color: #c14462; /* لون */
-    border-bottom: 3px solid #e85a78; /* خط سفلي */
-    padding-bottom: 8px; /* مسافة */
-    font-size: 1.4em; /* حجم */
-    margin-top: 30px; /* مسافة */
+    color: #d4af37;
+    border-bottom: 3px solid #d4af37;
+    padding-bottom: 8px;
+    font-size: 1.6em;
+    margin-top: 30px;
   }
 
   /* ===== القوائم ===== */
   ul {
-    list-style-type: none; /* إزالة النقاط */
-    padding: 0; /* إزالة الفراغ */
+    list-style-type: none;
+    padding: 0;
   }
   ul li {
-    padding: 12px 15px; /* مسافة داخلية */
-    font-size: 18px; /* حجم النص */
-    margin: 8px 0; /* مسافة بين العناصر */
-    background: rgba(255, 255, 255, 0.7); /* خلفية */
-    border-radius: 12px; /* تدوير */
-    transition: all 0.3s ease; /* حركة */
-    cursor: pointer; /* شكل المؤشر */
-    border-right: 4px solid transparent; /* خط جانبي */
+    padding: 12px 15px;
+    font-size: 18px;
+    margin: 8px 0;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border-right: 4px solid transparent;
   }
   ul li:hover {
-    background: rgba(255, 255, 255, 0.9); /* لون عند المرور */
-    transform: translateX(-5px); /* تحريك */
-    border-right: 4px solid #e85a78; /* خط */
-    box-shadow: 0 4px 15px rgba(232, 90, 120, 0.2); /* ظل */
+    background: rgba(212, 175, 55, 0.1);
+    transform: translateX(-5px);
+    border-right: 4px solid #d4af37;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
   }
 
   /* ===== الأسعار ===== */
   .price {
-    font-weight: bold; /* عريض */
-    color: #6d2d3c; /* لون */
-    position: relative; /* تحديد */
+    font-weight: bold;
+    color: #ffd700; /* ذهبي فاتح */
+    position: relative;
   }
   .price::after {
-    content: "💰"; /* أيقونة */
-    margin-right: 10px; /* مسافة */
-    font-size: 1.2em; /* حجم */
+    content: "💰";
+    margin-right: 10px;
+    font-size: 1.2em;
   }
 
   /* ===== التواصل ===== */
   .contact {
-    background: linear-gradient(135deg, #ffe4ec 0%, #ffd1dc 100%);
+    background: rgba(255, 255, 255, 0.05);
     padding: 25px;
     border-radius: 15px;
     text-align: center;
-    box-shadow: 0 4px 20px rgba(232, 90, 120, 0.3);
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
     margin-top: 30px;
   }
   .contact-button {
     display: inline-block;
-    background: linear-gradient(135deg, #e85a78 0%, #c14462 100%);
-    color: white;
+    background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
+    color: #1a1a1a;
     padding: 12px 25px;
     border-radius: 25px;
     text-decoration: none;
     margin: 10px;
     transition: all 0.3s ease;
     font-weight: bold;
-    box-shadow: 0 4px 15px rgba(232, 90, 120, 0.4);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
   }
   .contact-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(232, 90, 120, 0.6);
-    background: linear-gradient(135deg, #c14462 0%, #a03651 100%);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
+    background: linear-gradient(135deg, #b8860b 0%, #8b6914 100%);
   }
 </style>
 </head>
 <body>
-<!-- ضع هنا القائمة والأزرار والصور -->
+<h1>قائمة الماكرون الفرنسي</h1>
+<h2>النكهات</h2>
+<ul>
+  <li>فانيلا <span class="price">10 SAR</span></li>
+  <li>شوكولاتة <span class="price">12 SAR</span></li>
+  <li>فراولة <span class="price">11 SAR</span></li>
+</ul>
+<div class="contact">
+  <a href="#" class="contact-button">اطلب الآن</a>
+</div>
 </body>
 </html>
