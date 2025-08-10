@@ -1,107 +1,103 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>متجري - طلب عبر واتساب</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #fff8f0;
-      margin: 0; padding: 0;
-      direction: rtl;
-      text-align: right;
-      color: #333;
-    }
-    header {
-      background: #d2691e;
-      color: white;
-      padding: 1.5rem;
-    }
-    .products {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      padding: 1rem;
-      flex-wrap: wrap;
-    }
-    .product {
-      background: white;
-      border-radius: 8px;
-      padding: 1rem;
-      width: 200px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
-    }
-    .product img {
-      width: 100%;
-      border-radius: 6px;
-    }
-    .product h3 {
-      margin: 0.5rem 0 0.3rem 0;
-    }
-    .price {
-      font-weight: bold;
-      color: #b35400;
-      margin-bottom: 0.5rem;
-    }
-    button {
-      width: 100%;
-      background: #25d366;
-      border: none;
-      color: white;
-      font-weight: bold;
-      padding: 0.5rem;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    button:hover {
-      background: #1ebe57;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>قائمة الماكرون الفرنسي</title>
+<style>
+  /* ===== إعدادات الصفحة العامة ===== */
+  body {
+    font-family: 'Tahoma', sans-serif; /* نوع الخط */
+    background: linear-gradient(135deg, #fff8f8 0%, #ffe4ec 100%); /* لون الخلفية المتدرج */
+    color: #4a2c2a; /* لون النصوص */
+    padding: 30px; /* المسافة الداخلية */
+    max-width: 700px; /* عرض المحتوى */
+    margin: auto; /* توسيط المحتوى */
+    border-radius: 20px; /* تدوير الحواف */
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15); /* ظل */
+    min-height: 100vh; /* ملء الشاشة */
+  }
+
+  /* ===== العنوان الرئيسي ===== */
+  h1 {
+    text-align: center; /* توسيط العنوان */
+    color: #e85a78; /* لون العنوان */
+    font-size: 2.5em; /* حجم الخط */
+    margin-bottom: 30px; /* المسافة أسفل */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1); /* ظل خفيف */
+  }
+
+  /* ===== العناوين الفرعية ===== */
+  h2 {
+    color: #c14462; /* لون */
+    border-bottom: 3px solid #e85a78; /* خط سفلي */
+    padding-bottom: 8px; /* مسافة */
+    font-size: 1.4em; /* حجم */
+    margin-top: 30px; /* مسافة */
+  }
+
+  /* ===== القوائم ===== */
+  ul {
+    list-style-type: none; /* إزالة النقاط */
+    padding: 0; /* إزالة الفراغ */
+  }
+  ul li {
+    padding: 12px 15px; /* مسافة داخلية */
+    font-size: 18px; /* حجم النص */
+    margin: 8px 0; /* مسافة بين العناصر */
+    background: rgba(255, 255, 255, 0.7); /* خلفية */
+    border-radius: 12px; /* تدوير */
+    transition: all 0.3s ease; /* حركة */
+    cursor: pointer; /* شكل المؤشر */
+    border-right: 4px solid transparent; /* خط جانبي */
+  }
+  ul li:hover {
+    background: rgba(255, 255, 255, 0.9); /* لون عند المرور */
+    transform: translateX(-5px); /* تحريك */
+    border-right: 4px solid #e85a78; /* خط */
+    box-shadow: 0 4px 15px rgba(232, 90, 120, 0.2); /* ظل */
+  }
+
+  /* ===== الأسعار ===== */
+  .price {
+    font-weight: bold; /* عريض */
+    color: #6d2d3c; /* لون */
+    position: relative; /* تحديد */
+  }
+  .price::after {
+    content: "💰"; /* أيقونة */
+    margin-right: 10px; /* مسافة */
+    font-size: 1.2em; /* حجم */
+  }
+
+  /* ===== التواصل ===== */
+  .contact {
+    background: linear-gradient(135deg, #ffe4ec 0%, #ffd1dc 100%);
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(232, 90, 120, 0.3);
+    margin-top: 30px;
+  }
+  .contact-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #e85a78 0%, #c14462 100%);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    margin: 10px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(232, 90, 120, 0.4);
+  }
+  .contact-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(232, 90, 120, 0.6);
+    background: linear-gradient(135deg, #c14462 0%, #a03651 100%);
+  }
+</style>
 </head>
 <body>
-
-<header>
-  <h1>متجري للحلويات</h1>
-  <p>اطلب منتجاتنا بسهولة عبر واتساب</p>
-</header>
-
-<main>
-  <section class="products">
-    <div class="product">
-      <img src="https://via.placeholder.com/200" alt="ماكرون" />
-      <h3>ماكرون</h3>
-      <p class="price">15 ريال</p>
-      <button data-name="ماكرون" data-price="15">اطلب عبر واتساب</button>
-    </div>
-    <div class="product">
-      <img src="https://via.placeholder.com/200" alt="كريم باتيه" />
-      <h3>كريم باتيه</h3>
-      <p class="price">20 ريال</p>
-      <button data-name="كريم باتيه" data-price="20">اطلب عبر واتساب</button>
-    </div>
-    <div class="product">
-      <img src="https://via.placeholder.com/200" alt="تشيز كيك" />
-      <h3>تشيز كيك</h3>
-      <p class="price">25 ريال</p>
-      <button data-name="تشيز كيك" data-price="25">اطلب عبر واتساب</button>
-    </div>
-  </section>
-</main>
-
-<script>
-  const storeNumber = "966500000000"; // عدل الرقم برقم متجرك الدولي بدون +
-
-  document.querySelectorAll("button").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const name = btn.getAttribute("data-name");
-      const price = btn.getAttribute("data-price");
-      const message = `السلام عليكم، أود طلب المنتج: ${name} بسعر ${price} ريال.`;
-      const url = `https://wa.me/${storeNumber}?text=${encodeURIComponent(message)}`;
-      window.open(url, "_blank");
-    });
-  });
-</script>
-
+<!-- ضع هنا القائمة والأزرار والصور -->
 </body>
 </html>
